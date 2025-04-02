@@ -33,6 +33,8 @@ const Cardcollection = async () => {
           <h1 className="my-3 font-semibold self-center">Latest devices</h1>
           <div className="cards justify-center flex w-full h-full overflow-x-auto">
             {devices.map((d) => (
+
+              (d.class == latest &&
               <div key={d._id} className="card flex items-center h-[88%] w-[300px] bg-gray-300 hover:bg-gray-500 rounded-md my-2 mx-2 transition duration-500">
                 <img className="h-[90%] w-[120px] mx-2" src={d.imageurl} alt="cant show img" />
                 <div className="details flex flex-col">
@@ -40,6 +42,7 @@ const Cardcollection = async () => {
                   <h1 className="font-light">₹{d.price}</h1>
                 </div>
               </div>
+              )
             ))}
           </div>
         </div>
