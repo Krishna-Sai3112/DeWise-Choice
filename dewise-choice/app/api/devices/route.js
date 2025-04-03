@@ -3,9 +3,10 @@ import Device from "@/models/device"
 import { NextResponse } from "next/server";
 
 export async function POST(request){
-    const { name, brand, price, imageurl, ramrom, display, processor, camera, battery, os, softwaresupport, iprating, build, dimensions, speakers, network, fingerprintsensor, audiojack, devclass, camrat, perfrat, designrat, mediarat, softwarerat } = await request.json();
+    const { name, brand, price, imageurl, ramrom, display, processor, camera, battery, os, softwaresupport, iprating, build, dimensions, speakers, network, fingerprintsensor, audiojack, devclass, camrat, perfrat, designrat, mediarat, softwarerat, pro1, pro2, pro3, pro4, con1, con2 } = await request.json();
+    console.log(pro1,pro2,con1);
     await connectMongoDB();
-    await Device.create({ name, brand, price, imageurl, ramrom, display, processor, camera, battery, os, softwaresupport, iprating, build, dimensions, speakers, network, fingerprintsensor, audiojack, devclass, camrat, perfrat, designrat, mediarat, softwarerat });
+    await Device.create({ name, brand, price, imageurl, ramrom, display, processor, camera, battery, os, softwaresupport, iprating, build, dimensions, speakers, network, fingerprintsensor, audiojack, devclass, camrat, perfrat, designrat, mediarat, softwarerat, pro1, pro2, pro3, pro4, con1, con2 });
     return NextResponse.json({message: "Device added"})
 }
 

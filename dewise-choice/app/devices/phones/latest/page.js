@@ -3,7 +3,9 @@ import React from 'react'
 const page = () => {
   return (
     <div>
-      hii fraands this is /phones/latest
+      <div className='w-full h-full'>
+        Namaskaaram this is latest phones page
+      </div>
     </div>
   )
 }

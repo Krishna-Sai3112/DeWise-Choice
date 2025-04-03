@@ -37,18 +37,18 @@ const Navbar = () => {
       </Link>
       <div className="navelements flex items-center h-full">
         
-        <button onClick={()=>{setShowdropdown1(!showdropdown1)}} className='h-full w-full flex items-center justify-center text-gray-100 px-5 font-semibold'>
+        <button onClick={()=>{setShowdropdown1(!showdropdown1)}} onBlur={()=>{setShowdropdown1(false)}} className='h-full w-full hidden md:flex items-center justify-center text-gray-100 px-5 font-semibold'>
             Phones
         </button>
-        <button onClick={()=>{setShowdropdown2(!showdropdown2)}} className='h-full w-full flex items-center justify-center text-gray-100 px-5 font-semibold'>
+        <button onClick={()=>{setShowdropdown2(!showdropdown2)}} onBlur={()=>{setShowdropdown2(false)}} className='h-full w-full hidden md:flex items-center justify-center text-gray-100 px-5 font-semibold'>
             Laptops
         </button>
-        <button onClick={()=>{setShowdropdown3(!showdropdown3)}} className='h-full w-full flex items-center justify-center text-gray-100 px-5 font-semibold'>
+        <button onClick={()=>{setShowdropdown3(!showdropdown3)}} onBlur={()=>{setShowdropdown3(false)}} className='h-full w-full hidden md:flex items-center justify-center text-gray-100 px-5 font-semibold'>
             Tablets
         </button>
         
-        <button onClick={()=>{setShowdropdown4(!showdropdown4)}} className={`${session?"":"hidden"} mx-5 bg-white py-3 px-[38px] border border-white text-black font-semiboldbold rounded-lg`}>Welcome</button>
-        <Link href={"/login"} className={`${session?"hidden":""}  mx-5 bg-orange-700 py-3 px-4 border border-white text-white font-semiboldbold rounded-full `}>Signup/Login</Link>
+        <button onClick={()=>{setShowdropdown4(!showdropdown4)}} onBlur={()=>{setShowdropdown4(false)}} className={`${session?"":"hidden"} mx-5 w-[135px] bg-white py-3 px-8 border border-white text-black font-semiboldbold rounded-lg`}>Welcome</button>
+        <Link href={"/login"} className={`${session?"hidden":""}  mx-5 w-[135px] bg-orange-700 py-3 px-4 border border-white text-white font-semiboldbold rounded-full `}>Signup/Login</Link>
       </div>
     </div>
     <div className={`${showdropdown1?"":"hidden"} flex flex-col w-[120px] fixed right-[360px] bg-black text-gray-100`}>
@@ -72,10 +72,10 @@ const Navbar = () => {
             <Link href={"/devices/tablets/upcoming"} className='px-2 py-2 font-semibold hover:bg-neutral-800 w-full flex justify-center'>Upcoming</Link>
         </ul>
     </div>
-    <div className={`${showdropdown4?"":"hidden"} flex flex-col w-[120px] fixed right-[32px] bg-slate-200`}>
+    <div className={`${showdropdown4?"":"hidden"} flex flex-col w-[120px] fixed right-[30px] bg-black text-white`}>
       <ul className='w-full flex justify-center items-center flex-col text-sm'>
-        {session && <Link href={`/${session.user.email}`} onClick={()=>{setShowdropdown4(!showdropdown4)}} className='px-2 py-2 font-semibold'>Profile</Link>}
-        <button onClick={() => {signOut(); showdropdown4(!showdropdown4)}} className='px-2 py-2 font-semibold'>Logout</button>
+        {session && <Link href={`/${session.user.email}`} onClick={()=>{setShowdropdown4(!showdropdown4)}} className='px-2 py-2 font-semibold hover:bg-neutral-800 w-full flex justify-center'>Profile</Link>}
+        <button onClick={() => {signOut(); showdropdown4(!showdropdown4)}} className='px-2 py-2 font-semibold hover:bg-neutral-800 w-full flex justify-center'>Logout</button>
       </ul>
     </div>
     </div>

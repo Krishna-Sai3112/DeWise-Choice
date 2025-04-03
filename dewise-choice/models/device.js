@@ -26,6 +26,13 @@ const deviceSchema = new Schema(
         designrat: Number,
         mediarat: Number,
         softwarerat: Number,
+        pro1: String,
+        pro2: String,
+        pro3: String,
+        pro4: String,
+        con1: String,
+        con2: String,
+
     }
 );
 

@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useSession, signIn,signOut } from 'next-auth/react'
 import { Aref_Ruqaa_Ink } from 'next/font/google'
 import Github from 'next-auth/providers/github'
+import Google from 'next-auth/providers/google'
 
 const page = () => {
 

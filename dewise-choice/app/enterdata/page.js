@@ -28,6 +28,13 @@ export default function AddDevice() {
     const [designrat, setDesignrat] = useState("");
     const [mediarat, setMediarat] = useState("");
     const [softwarerat, setSoftwarerat] = useState("");
+    const [pro1, setPro1] = useState("");
+    const [pro2, setPro2] = useState("");
+    const [pro3, setPro3] = useState("");
+    const [pro4, setPro4] = useState("");
+    const [con1, setCon1] = useState("");
+    const [con2, setCon2] = useState("");
+    
 
     
 
@@ -41,7 +48,7 @@ export default function AddDevice() {
             headers: {
               "Content-type": "application/json",
             },
-            body: JSON.stringify({ name, brand, price, imageurl, ramrom, display, processor, camera, battery, os, softwaresupport, iprating, build, dimensions, speakers, network, fingerprintsensor, audiojack, devclass, camrat, perfrat, designrat, mediarat, softwarerat }),
+            body: JSON.stringify({ name, brand, price, imageurl, ramrom, display, processor, camera, battery, os, softwaresupport, iprating, build, dimensions, speakers, network, fingerprintsensor, audiojack, devclass, camrat, perfrat, designrat, mediarat, softwarerat, pro1, pro2, pro3, pro4, con1, con2 }),
           });
     
           if (res.ok) {
@@ -227,6 +234,49 @@ export default function AddDevice() {
                     className='border border-slate-500 px-8 py-2' 
                     type="number" 
                     placeholder='Software Support Rating'
+                />
+
+                <input 
+                    onChange={(e) => setPro1(e.target.value)}
+                    value={pro1}
+                    className='border border-slate-500 px-8 py-2' 
+                    type="text" 
+                    placeholder='Pro-1'
+                />
+                <input 
+                    onChange={(e) => setPro2(e.target.value)}
+                    value={pro2}
+                    className='border border-slate-500 px-8 py-2' 
+                    type="text" 
+                    placeholder='Pro-2'
+                />
+                <input 
+                    onChange={(e) => setPro3(e.target.value)}
+                    value={pro3}
+                    className='border border-slate-500 px-8 py-2' 
+                    type="text" 
+                    placeholder='Pro-3'
+                />
+                <input 
+                    onChange={(e) => setPro4(e.target.value)}
+                    value={pro4}
+                    className='border border-slate-500 px-8 py-2' 
+                    type="text" 
+                    placeholder='Pro-4'
+                />
+                <input 
+                    onChange={(e) => setCon1(e.target.value)}
+                    value={con1}
+                    className='border border-slate-500 px-8 py-2' 
+                    type="text" 
+                    placeholder='Con-1'
+                />
+                <input 
+                    onChange={(e) => setCon2(e.target.value)}
+                    value={con2}
+                    className='border border-slate-500 px-8 py-2' 
+                    type="text" 
+                    placeholder='Con-2'
                 />
                 <button type='submit' className='bg-indigo-300 font-bold text-black py-3 px-6 w-fit'>Submit</button>
 
